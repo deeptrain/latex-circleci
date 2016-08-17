@@ -4,5 +4,5 @@ dependencies:
 test:
     pre:
         - make
-    override:
-        - make check
+    post:
+        - cp paper.pdf $CIRCLE_ARTIFACTS/paper.pdf
