@@ -4,5 +4,7 @@ dependencies:
 test:
     pre:
         - make
+        - perl latexcount.pl paper.tex
+
     post:
         - cp paper.pdf $CIRCLE_ARTIFACTS/paper.pdf
