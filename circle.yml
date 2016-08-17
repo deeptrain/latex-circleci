@@ -5,6 +5,7 @@ test:
     pre:
         - make
         - perl latexcount.pl paper.tex
+        - perl texcount.pl paper.tex
 
     post:
         - cp paper.pdf $CIRCLE_ARTIFACTS/paper.pdf
