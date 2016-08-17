@@ -1,0 +1,8 @@
+dependencies:
+    pre:
+        - sudo apt-get install texlive
+test:
+    pre:
+        - make
+    override:
+        - make check
