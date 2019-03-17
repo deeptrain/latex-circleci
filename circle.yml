@@ -5,5 +5,5 @@ jobs:
        - image: danteev/texlive
      steps:
        - checkout
-       - run: latexmk paper.tex
+       - run: make
 
