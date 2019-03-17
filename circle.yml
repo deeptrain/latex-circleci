@@ -6,4 +6,7 @@ jobs:
      steps:
        - checkout
        - run: make
+       - run: mkdir build && cp paper.pdf build/
+       - store_artifacts:
+           path: build/
 
