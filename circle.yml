@@ -1,11 +1,14 @@
-dependencies:
-    pre:
-        - sudo apt-get install texlive
-test:
-    pre:
-        - make
-        - perl scripts/latexcount.pl paper.tex
-        - perl scripts/texcount.pl paper.tex
+version: 2
+jobs:
+   build:
+     docker:
+       - image: danteev/texlive
+     steps:
+       - checkout
+       - run: make
+       - run: mkdir build && cp paper.pdf build/
+       - run: perl scripts/latexcount.pl paper.tex
+       - run: perl scripts/texcount.pl paper.tex
+       - store_artifacts:
+           path: build/
 
-    post:
-        - cp paper.pdf $CIRCLE_ARTIFACTS/paper.pdf
