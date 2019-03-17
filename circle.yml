@@ -7,6 +7,8 @@ jobs:
        - checkout
        - run: make
        - run: mkdir build && cp paper.pdf build/
+       - run: perl scripts/latexcount.pl paper.tex
+       - run: perl scripts/texcount.pl paper.tex
        - store_artifacts:
            path: build/
 
